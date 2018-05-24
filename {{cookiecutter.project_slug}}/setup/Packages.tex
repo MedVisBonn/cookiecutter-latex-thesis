@@ -1,0 +1,73 @@
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel} % sets up english hyphenation
+\usepackage{csquotes} % for language-dependent quotes in biblatex
+\usepackage{eurosym} %includes the euro symbol 
+
+\usepackage[list-name={List of Acronyms}]{acro}
+
+\usepackage{graphicx} % enables loading of graphics
+\graphicspath{ {images/} }
+
+% drawing vector graphics in latex
+\usepackage{tikz} %tikz helps to draw nice pictures with a lot of effort for advanced users
+\usetikzlibrary{positioning,shapes,shadows,arrows, backgrounds}
+\usepackage{verbatim}
+\usepackage{tikz-3dplot}
+
+\tikzset{
+    tri/.style={
+        draw,
+        shape border rotate=90,
+        isosceles triangle,
+        isosceles triangle apex angle=60,
+        node distance=1cm,
+        minimum height=4em
+    }
+}
+ 
+\usepackage[
+natbib,
+maxnames=2,
+maxbibnames=100,
+style=authoryear-comp,
+uniquename=full,
+firstinits,
+doi=false,
+backend=biber,
+backref,
+hyperref]{biblatex} % advanced bibliography support
+\addbibresource{literature.bib} % Add a bibliography file. (\bibliography{bib file} is less flexible and should not be used anymore although its still supported by biblatex)
+
+\usepackage{subfiles} % Use this package if you want to seperately compile child documents
+
+% Create nice tables in your document
+\usepackage{tabu}     % provides advanced tables
+\usepackage{array,multirow}
+\usepackage{booktabs} % enables reference bookstyle tables
+
+\usepackage[format=plain, labelfont=bf]{caption}
+\usepackage{subcaption} % enables use multiple figures in a figure
+\captionsetup{compatibility=false}
+\usepackage{enumitem} % allows customization of enumeration and itemize environment
+
+%\usepackage{parskip} %alternatively parskip replaces paragraph indentation by increased in-betweeen-paragraph linespacing 
+\usepackage{setspace} % helps setup line spacing
+%\onehalfspacing % increases linespacing to one and half
+\usepackage{placeins} % provides FloatBarrier
+\usepackage[ruled,vlined]{algorithm2e} %algorithm package
+\linespread{1.1} % Definition of the linespread
+
+\usepackage[tbtags]{mathtools}
+\DeclareMathOperator*{\somefunc}{somefunc}
+
+\usepackage[unicode=true]{hyperref} % enables use of metadata for pdfs and hyperlinks within a document
+\usepackage[usenames,dvipsnames,hyperref]{xcolor} % enables more advanced color support for hyperref
+\hypersetup{colorlinks=true, %flag for prints
+hidelinks,  % this option would hide links for the print version of your thesis
+linkcolor=red!35!black,    %definition of the link color
+citecolor=green!35!black,  %definition of the cite color
+urlcolor=magenta!35!black, %definition of the url color
+%pdfauthor=, % Optional: Specify the author of the pdf
+%pdftitle=   % Optional: Specify the title within the pdf
+}      
+\usepackage[capitalize,noabbrev]{cleveref}

@@ -1,5 +1,7 @@
-latex-thesis-template
+cookiecutter-latex-thesis
 =====================
+
+**Attention: This template is still in development**
 
 This template should get you started with writing a thesis and avoiding the
 most common errors.
