@@ -13,7 +13,7 @@ clean:
 	rm -rf $(GARBAGE)
 
 build:
-	latexmk -pdf ${filename}.tex
+	latexmk -pdf -f ${filename}.tex
 
 read:
 	evince ${filename}.pdf &
