@@ -1,5 +1,4 @@
 \documentclass[12pt, %font size
-usenames, dvipsnames, hyperref, % needed for xcolor
 english, % document language
 a4paper, %paper type
 twoside, % two sided printing
@@ -10,37 +9,41 @@ BCOR=8mm]{scrbook} % BCOR sets the space, used by the type of  book. (e.g. glued
 %scrreprt is used for larger texts with chapters (Master or Bachelor Thesis)
 %scrartcl is used when there are no chapters ( for smaller paper)
 
-\input{setup/Packages.tex}
-\input{setup/Acronyms.tex}
+\input{setup/packages.tex}
+\input{setup/acronyms.tex}
 
 \begin{document}
 \frontmatter
 		\input{setup/titlepage.tex}
-        \input{chapters/Declaration.tex}
-        \input{chapters/abstract.tex}
+        \input{setup/declaration.tex}
+        \subfile{Abstract.tex}
         
-        %\addcontentsline{toc}{chapter}{Acronyms}		
-		%\printacronyms
-		
         \tableofcontents
-        \listoffigures
-        \listofalgorithms
-
-        \newpage          
-
+        {% if cookiecutter.list_of_figures=="y" %}\listoffigures{% endif %}
+        {% if cookiecutter.list_of_tables=="y" %}\listoftables{% endif %}
+        {% if cookiecutter.list_of_algorithms=="y" %}\listofalgorithms{% endif %}
+        {% if cookiecutter.acronyms_overview=="y" %}
+        %\addcontentsline{toc}{chapter}{Acronyms}		
+		\printacronyms
+		{% endif %}
+        \newpage
+        
+        
 
 \mainmatter
-        \subfile{chapters/Introduction}
-        \subfile{chapters/Methods}
-        \subfile{chapters/Results}
-        \subfile{chapters/Conclusion}
-            
+        \subfile{Introduction}
+        \subfile{Methods}
+        \subfile{Results}
+        \subfile{Discussion}
+        \subfile{Conclusion}          
+          
+        {% if cookiecutter.guidelines=="y" %}  
         % Some guidelines. Comment them out before printing your thesis :)
-        \subfile{guidelines/guidelines}
-
+        \subfile{Guidelines}
+        {% endif %}
 
 \backmatter
-        \subfile{chapters/Appendix}
+        \subfile{Appendix}
         
         \FloatBarrier
         

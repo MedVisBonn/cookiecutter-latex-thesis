@@ -1,4 +1,4 @@
-cookiecutter-latex-thesis
+Cookiecutter $\latex$-thesis
 =====================
 
 **Attention: This template is still in development**

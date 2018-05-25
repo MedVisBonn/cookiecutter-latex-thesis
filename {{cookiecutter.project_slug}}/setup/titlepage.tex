@@ -2,9 +2,9 @@
 	\centering
      
     \includegraphics[width=0.6\textwidth]{Universitaet_Bonn.png}\par
-    \vspace{1cm}
-	{\textsc\LARGE Rheinische\\[5mm] Friedrich-Wilhelms-Universität Bonn}\par
-	\vspace{1.5cm}
+    \vspace{0.7cm}
+	{\textsc\LARGE Rheinische Friedrich-Wilhelms-Universität Bonn}\par
+	\vspace{1.2cm}
 	{\scshape Master's thesis for obtaining the academic degree \par\glqq Master of Science (M.Sc.)\grqq  \par}
 	\vspace{2cm}
 	
@@ -13,22 +13,23 @@
 	\vspace{1.4cm}
 	
 	% Author and supervisor
+	\noindent
     \begin{minipage}[t]{0.4\textwidth}
         \begin{flushleft} \large
             \emph{Author:}\par
-            {{cookiecutter.author}}
+            {{cookiecutter.author|replace(" ", "~")}}
         \end{flushleft}        
-    \end{minipage}
-    
+    \end{minipage}    
     \begin{minipage}[t]{0.5\textwidth}
         \begin{flushright} \large
             \emph{First Examiner:}\par
-            {{cookiecutter.examiner_first}}\par\vspace{0.5cm}
+            {{cookiecutter.examiner_first|replace(" ", "~")}}\par\vspace{0.5cm}
+            
             \emph{Second Examiner:}\par
-            {{cookiecutter.examiner_second}}\par\vspace{0.5cm}
+            {{cookiecutter.examiner_second|replace(" ", "~")}}\par\vspace{0.5cm}
 
             \emph{Advisor:} \\
-            {{cookiecutter.advisor}}\par\vspace{0.5cm}
+            {{cookiecutter.advisor|replace(" ", "~")}}\par\vspace{0.5cm}
         \end{flushright}
     \end{minipage}
 
