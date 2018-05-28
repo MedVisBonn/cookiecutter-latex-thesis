@@ -31,7 +31,7 @@ appendix:
 guidelines:
 	latexmk -pdf -f Guidelines.tex
 	
-clean-all: clean clean-setup clean-tables
+clean-all: clean clean-tables
 
 clean:
 	find . -name '*.aux' -exec rm -f {} +
@@ -46,10 +46,8 @@ clean:
 	find . -name '*.fdb_latexmk' -exec rm -f {} +
 	find . -name '*.loa' -exec rm -f {} +
 	find . -name '*.lof' -exec rm -f {} +
+	find . -name '*.lot' -exec rm -f {} +
 	find . -name '*.out' -exec rm -f {} +
-
-clean-setup:
-	$(MAKE) -C setup clean
 
 clean-tables:
 	$(MAKE) -C tables clean
