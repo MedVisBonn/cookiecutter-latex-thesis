@@ -10,7 +10,7 @@ Features
 --------
 
 * Title page and declaration of authorship set up already
-* Makefile: Compile document or parts of it; Clean your source folder
+* Makefile: Compile document or parts of it; Clean your source folder; Compress your pdf
 * Many packages already configured (biblatex, booktabs, graphicx, 
   hyperref, acro, ...)
 
@@ -25,10 +25,13 @@ Generate your \Latex document::
 
     cookiecutter https://github.com/Oli4/cookiecutter-latex-thesis.git
 
-Then:
+Make sure biber and texlive is installed, you need it for compiling your document.:
 
-* Navigate to your document and compile it for the first time using ``make``.
-* Start writing your thesis.
+    sudo apt install texlive-full texlive-bibtex-extra biber
+
+Installing texlive-full is probably an overkill but I haven't figured out yet, which parts of texlive are required by this template. You can also just run the make command to start compilation and solve the errors step by step installing only the required parts on after the other. 
+
+Now you can start writing your thesis.
 
 Similar Cookiecutter Templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
