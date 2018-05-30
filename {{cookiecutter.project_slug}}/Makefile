@@ -2,34 +2,33 @@
 
 filename={{cookiecutter.project_slug}}
 
-all: build clean-all
+all: build clean-all read
 
 build:
-	latexmk -pdf -f ${filename}.tex
+	pdflatex -interaction=nonstopmode -output-format=pdf ${filename}.tex
+	biber ${filename}
+	pdflatex -interaction=nonstopmode -output-format=pdf ${filename}.tex
 
-introduction:
-	latexmk -pdf -f Abstract.tex
+abstract: filename=Abstract
+abstract: build clean-all read
 
-introduction:
-	latexmk -pdf -f Introduction.tex
+introduction: filename=Introduction
+introduction: build clean-all read
 
-methods:
-	latexmk -pdf -f Methods.tex
+methods: filename=Methods
+methods: build clean-all read
 
-results:
-	latexmk -pdf -f Results.tex
+results: filename=Results
+restuls: build clean-all read
 
-discussion:
-	latexmk -pdf -f Discussion.tex
+discussion: filename=Discussion
+discussion: build clean-all read
 
-conclusion:
-	latexmk -pdf -f Conclusion.tex
+conclusion: filename=Conclusion
+conclusion: build clean-all read
 
-appendix:
-	latexmk -pdf -f Appendix.tex
-
-guidelines:
-	latexmk -pdf -f Guidelines.tex
+appendix: filename=Appendix
+appendix:build clean-all read
 	
 clean-all: clean clean-tables
 
@@ -53,8 +52,16 @@ clean-tables:
 	$(MAKE) -C tables clean
 
 read:
-	evince ${filename}.pdf &
+	xdg-open ${filename}.pdf &
 
-aread:
-	acroread ${filename}.pdf
+# PDF compression (low quality - small filesize)
+screen:
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/screen -sOutputFile=${filename}_screen.pdf ${filename}.pdf
 
+# PDF compression (medium quality - medium filesize)
+ebook:
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/ebook -sOutputFile=${filename}_ebook.pdf ${filename}.pdf
+
+# PDF compression (high quality - largest but smaller than original filesize)
+prepress:
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/prepress -sOutputFile=${filename}_prepress.pdf ${filename}.pdf
