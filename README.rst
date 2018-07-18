@@ -4,7 +4,7 @@ Cookiecutter Latex-thesis
 
 Write your thesis with Latex using this Cookiecutter_ template.
 
-* GitHub repo: https://github.com/Oli4/cookiecutter-latex-thesis/
+* GitHub repo: https://github.com/MedVisBonn/cookiecutter-latex-thesis/
 
 Features
 --------
