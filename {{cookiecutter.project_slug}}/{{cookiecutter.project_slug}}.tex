@@ -18,9 +18,9 @@ BCOR=8mm]{scrbook} % BCOR sets the space, used by the type of  book. (e.g. glued
         \subfile{Abstract.tex}
         
         \tableofcontents
-        {% if cookiecutter.list_of_figures=="y" %}\listoffigures{% endif %}
-        {% if cookiecutter.list_of_tables=="y" %}\listoftables{% endif %}
-        {% if cookiecutter.list_of_algorithms=="y" %}\listofalgorithms{% endif %}
+        {% if cookiecutter.list_of_figures=="n" %}%{% endif %}\listoffigures
+        {% if cookiecutter.list_of_tables=="n" %}%{% endif %}\listoftables
+        {% if cookiecutter.list_of_algorithms=="n" %}%{% endif %}\listofalgorithms
         {% if cookiecutter.acronyms_overview=="y" %}
         %\addcontentsline{toc}{chapter}{Acronyms}		
 		\printacronyms

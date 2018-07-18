@@ -8,6 +8,7 @@ build:
 	pdflatex -interaction=nonstopmode -output-format=pdf ${filename}.tex
 	biber ${filename}
 	pdflatex -interaction=nonstopmode -output-format=pdf ${filename}.tex
+	pdflatex -interaction=nonstopmode -output-format=pdf ${filename}.tex
 
 abstract: filename=Abstract
 abstract: build clean-all read
