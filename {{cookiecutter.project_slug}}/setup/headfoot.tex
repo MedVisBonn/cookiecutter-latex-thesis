@@ -4,7 +4,7 @@
 % http://tug.ctan.org/macros/latex/contrib/fancyhdr/fancyhdr.pdf
 
 % Define or redefine pagestyles
-\fancypagestyle{thesis}{% The same as the fancy pagestyle
+\fancypagestyle{thesis}{ % The same as the fancy pagestyle
 	\fancyhead[LE,RO]{\textsl{\rightmark}}
 	\fancyhead[LO,RE]{\textsl{\leftmark}}
 	\fancyfoot[C]{\thepage}
@@ -12,7 +12,7 @@
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\footrulewidth}{0pt}}
 
-\fancypagestyle{bib}{%
+\fancypagestyle{bib}{ %
 	\fancyhf{} % clean all fields (header and footer)	
 	\fancyhead[LE,RO]{References}
 	\fancyfoot[C]{\thepage}
