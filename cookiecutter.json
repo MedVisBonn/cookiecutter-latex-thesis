@@ -10,6 +10,7 @@
     "list_of_figures": "n",
     "list_of_tables": "n",
     "list_of_algorithms": "n",
-    "acronyms_overview": "y"
+    "acronyms_overview": "y", 
+    "tutorial":"y"
     
 }

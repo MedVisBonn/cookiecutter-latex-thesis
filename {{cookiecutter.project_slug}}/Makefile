@@ -9,6 +9,9 @@ build:
 	biber ${filename}
 	pdflatex -interaction=nonstopmode -output-format=pdf ${filename}.tex
 
+tutorial: filename=Tutorial
+tutorial: build clean-all read
+
 abstract: filename=Abstract
 abstract: build clean-all read
 

@@ -1,0 +1,80 @@
+\documentclass[{{cookiecutter.project_slug}}.tex]{subfiles}
+
+\begin{document}
+\chapter{Tutorial}
+
+If you are reading this you probably created your \LaTeX project using the !(cookiecutter-latex-template)[https://github.com/MedVisBonn/cookiecutter-latex-thesis]. You did great so far. The goal of this section is to enable you to take full advantage from using this template as well as introducing features of \LaTeX you may need for writing your thesis.
+
+\section{Makefile}
+The Makefile you can find in your projects directory can help you to speed up several common tasks. Unfortunately it is tested only on Ubuntu Linux and will probably not work on Windows or MacOS. As you are not directly seeing what you will get when you are writing \LaTeX  you frequently need to compile your document. There are many Integrated Writing Environments which give you a GUI for compiling and inserting frequently used commands. For example TexStudio, Texmaker, TeXworks \dots. Nevertheless I often had the problem that some of the intermediate files created while compiling the document lead to errors in following compilations. I ended up deleting them manually to compile the document again. Another problem especially for large documents is that the compilation may take quite a bit of time which is pretty annoying if you just want to check if your new table finally fits the page. The provided Makefile tries to circumvent those problems. Intermediate files are removed after the compilation and compiling only a specific part of your thesis is straight forward. Additionally you can easily reduce the file size of your final PDF. You can find an overview of all provided make commands in table \ref{tab:Makefile}.
+
+{% raw -%}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+{%- endraw %}
+\begin{table*}
+\centering
+\begin{tabular}{}
+\toprule
+command & internal commands & effect \\
+make / make all & & Compile the complete document; Delete all intermediate files; Open the PDF \\
+make build & & \\
+make \textit{chapter} & & \\
+make clean & & \\
+make read & & \\
+make screen & & \\
+make ebook & & \\
+make prepress & & \\
+\midrule
+
+\bottomrule
+\end{tabular}
+\caption{Make commands provided in cookiecutter-latex-template.}
+\end{table*}
+
+ 
+\section{Github}
+
+\section{\LaTeX Features}
+
+\subsection{Graphics}
+
+\subsection{Tables}
+
+{% raw -%}
+	\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+{%- endraw %}
+\begin{table*}
+	\centering
+	\ra{1.3}
+	\begin{tabular}{@{}rrrrcrrrcrrr@{}}
+		\toprule
+		& 
+		\multicolumn{3}{c}{$w = 8$} & \phantom{abc}& \multicolumn{3}{c}{$w = 16$} & \phantom{abc} & \multicolumn{3}{c}{$w = 32$}\\
+		\cmidrule{2-4} \cmidrule{6-8}\cmidrule{10-12}& $t=0$ & $t=1$ & $t=2$ && $t=0$ & $t=1$ & $t=2$ && $t=0$ & $t=1$ & $t=2$\\
+		\midrule
+		
+		$dir=1$\\
+		$c$ & 0.0790 & 0.1692 & 0.2945 && 0.3670 & 0.7187 & 3.1815 && -1.0032 & -1.7104 & -21.7969\\
+		$c$ &  -0.8651& 50.0476& 5.9384&& -9.0714& 297.0923& 46.2143&& 4.3590& 34.5809& 76.9167\\
+		$c$ & 124.2756& -50.9612& -14.2721&& 128.2265& -630.5455& -381.0930&& -121.0518& -137.1210& -220.2500\\
+		
+		$dir=0$\\
+		$c$ & 0.0357& 1.2473& 0.2119&& 0.3593& -0.2755& 2.1764&& -1.2998& -3.8202& -1.2784\\
+		$c$ & -17.9048& -37.1111& 8.8591&& -30.7381& -9.5952& -3.0000&& -11.1631& -5.7108& -15.6728\\
+		$c$ & 105.5518& 232.1160& -94.7351&& 100.2497& 141.2778& -259.7326&& 52.5745& 10.1098& -140.2130\\
+		
+		\bottomrule
+	\end{tabular}
+	\caption{Make commands provided in cookiecutter-latex-template.}
+\end{table*}
+% https://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf
+
+\subsection{Algorithms}
+
+\subsection{References}
+
+\subsection{Acronyms}
+
+\subsection{Code Highlighting}
+
+\end{document}

@@ -30,6 +30,7 @@ BCOR=8mm]{scrbook} % BCOR sets the space, used by the type of  book. (e.g. glued
         
 
 \mainmatter
+		{% if cookiecutter.tutorial=="y" %}\subfile{Tutorial}{% endif %}
         \subfile{Introduction}
         \subfile{Methods}
         \subfile{Results}
