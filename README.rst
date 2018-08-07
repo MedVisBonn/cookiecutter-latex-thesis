@@ -23,7 +23,7 @@ Install the latest Cookiecutter if you haven't installed it yet::
 
 Generate your \Latex document::
 
-    cookiecutter https://github.com/Oli4/cookiecutter-latex-thesis.git
+    cookiecutter https://github.com/MedVisBonn/cookiecutter-latex-thesis.git
 
 Make sure biber and texlive is installed, you need it for compiling your document.:
 
