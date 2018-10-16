@@ -29,7 +29,7 @@ Make sure biber and texlive is installed, you need it for compiling your documen
 
     sudo apt install texlive-full texlive-bibtex-extra biber
 
-Installing texlive-full is probably an overkill but I haven't figured out yet, which parts of texlive are required by this template. You can also just run the make command to start compilation and solve the errors step by step installing only the required parts on after the other. 
+Installing texlive-full is probably an overkill but I haven't figured out yet, which parts of texlive are required by this template. You can also just run the make command to start compilation and solve the errors step by step installing only the required parts one after the other. 
 
 Now you can start writing your thesis.
 
