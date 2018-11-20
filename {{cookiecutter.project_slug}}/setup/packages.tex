@@ -1,4 +1,5 @@
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[english]{babel} % sets up english hyphenation
 \usepackage{csquotes} % for language-dependent quotes in biblatex
 \usepackage{eurosym} %includes the euro symbol 
@@ -25,9 +26,11 @@ hyperref]{biblatex} % advanced bibliography support
 \usepackage{subfiles} % Use this package if you want to seperately compile child documents
 
 % Create nice tables in your document
+\usepackage{pdflscape} % Provides the landscape environment for landscape tables
 \usepackage{tabu}     % provides advanced tables
 \usepackage{array,multirow}
 \usepackage{booktabs} % enables reference bookstyle tables
+\usepackage{longtable} % Make multipage tables without creating a new table for every page
 
 \usepackage[format=plain, labelfont=bf]{caption}
 \usepackage{subcaption} % enables use of multiple figures in a figure
