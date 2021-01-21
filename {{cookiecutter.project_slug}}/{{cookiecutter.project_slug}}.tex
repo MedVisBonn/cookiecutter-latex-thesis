@@ -23,7 +23,7 @@ BCOR=8mm]{scrbook} % BCOR sets the space, used by the type of  book. (e.g. glued
         {% if cookiecutter.list_of_algorithms=="n" %}%{% endif %}\listofalgorithms
         {% if cookiecutter.acronyms_overview=="y" %}
         %\addcontentsline{toc}{chapter}{Acronyms}		
-		\printacronyms
+		\printacronyms[name = {List of Acronyms}]
 		{% endif %}
         \newpage
         
